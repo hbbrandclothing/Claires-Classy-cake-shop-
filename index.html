@@ -5,21 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claire’s Classy Cakes</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #111;
+    background: #fff;
 }
 
+/* HEADINGS */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
@@ -28,73 +32,47 @@ h1, h2, h3 {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 30px 60px;
+    align-items: center;
+    padding: 25px 60px;
     background: #000;
     color: #fff;
 }
 
 nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 30px;
+    font-size: 14px;
 }
 
 /* HERO */
 .hero {
-    padding: 100px 60px;
-    background: #f8d7e3;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 80px;
+}
+
+.hero-text {
+    max-width: 500px;
 }
 
 .hero h2 {
-    font-size: 42px;
+    font-size: 48px;
+    margin-bottom: 15px;
 }
 
 .hero span {
     color: #ff4fa3;
 }
 
-/* PRODUCTS */
-.products {
-    padding: 80px 60px;
+.hero p {
+    margin-bottom: 20px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.card img {
-    width: 100%;
+.hero img {
+    width: 320px;
     border-radius: 12px;
-}
-
-/* PRODUCT SECTIONS (hidden by default) */
-.product-section {
-    display: none;
-    padding: 60px;
-}
-
-.product-section.active {
-    display: block;
-}
-
-/* CUSTOM */
-.custom {
-    padding: 80px 60px;
-    background: #000;
-    color: white;
-    text-align: center;
 }
 
 /* BUTTON */
@@ -107,10 +85,58 @@ button {
     cursor: pointer;
 }
 
+/* PRODUCTS */
+.products {
+    padding: 80px;
+}
+
+.products h2 {
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+/* CUSTOM CAKES */
+.custom {
+    background: #000;
+    color: white;
+    padding: 80px;
+    text-align: center;
+}
+
+.custom button {
+    margin-top: 15px;
+}
+
+/* CONTACT */
+.contact {
+    padding: 60px;
+    text-align: center;
+}
+
+.contact a {
+    color: #ff4fa3;
+    text-decoration: none;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
+    font-size: 14px;
 }
 
 </style>
@@ -122,11 +148,23 @@ footer {
     <h1>Claire’s Classy Cakes</h1>
     <nav>
         <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Custom Cakes</a>
+        <a href="#">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h2>Delicious Treats Made With <span>Love</span></h2>
+    <div class="hero-text">
+        <h2>Delicious Treats Made With <span>Love</span></h2>
+        <p>Baked fresh for every order</p>
+
+        <a href="mailto:clairesclassycakeshop@gmail.com?subject=Order Enquiry">
+            <button>Order Now</button>
+        </a>
+    </div>
+
+    <img src="brownie.jpg" alt="Brownies">
 </section>
 
 <section class="products">
@@ -134,49 +172,27 @@ footer {
 
     <div class="grid">
 
-        <div class="card" onclick="openSection('cookiepies')">
+        <div class="card">
             <img src="cookiepie.jpg">
             <h3>Cookie Pies</h3>
         </div>
 
-        <div class="card" onclick="openSection('brownies')">
+        <div class="card">
             <img src="brownie.jpg">
             <h3>Brownies</h3>
         </div>
 
-        <div class="card" onclick="openSection('traybakes')">
+        <div class="card">
             <img src="traybake.jpg">
             <h3>Tray Bake Cakes</h3>
         </div>
 
-        <div class="card" onclick="openSection('cookies')">
+        <div class="card">
             <img src="cookie.jpg">
             <h3>Cookies</h3>
         </div>
 
     </div>
-</section>
-
-<!-- PRODUCT DETAIL SECTIONS -->
-
-<section id="cookiepies" class="product-section">
-    <h2>Cookie Pies</h2>
-    <p>Our signature stuffed cookie pies.</p>
-</section>
-
-<section id="brownies" class="product-section">
-    <h2>Brownies</h2>
-    <p>Rich, fudgy brownies in multiple flavours.</p>
-</section>
-
-<section id="traybakes" class="product-section">
-    <h2>Tray Bake Cakes</h2>
-    <p>Perfect for sharing and events.</p>
-</section>
-
-<section id="cookies" class="product-section">
-    <h2>Cookies</h2>
-    <p>Freshly baked cookies with premium ingredients.</p>
 </section>
 
 <section class="custom">
@@ -189,33 +205,20 @@ footer {
     </a>
 </section>
 
-<footer>
+<section class="contact">
+    <h2>Contact</h2>
+    <p>Email us for orders and enquiries</p>
+
     <p>
-        Contact:
-        <a href="mailto:clairesclassycakeshop@gmail.com?subject=Enquiry">
+        <a href="mailto:clairesclassycakeshop@gmail.com?subject=General Enquiry">
             clairesclassycakeshop@gmail.com
         </a>
     </p>
+</section>
+
+<footer>
+    <p>© 2026 Claire’s Classy Cakes</p>
 </footer>
-
-<script>
-
-function openSection(sectionId) {
-    const sections = document.querySelectorAll('.product-section');
-
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-
-    document.getElementById(sectionId).classList.add('active');
-
-    window.scrollTo({
-        top: document.getElementById(sectionId).offsetTop,
-        behavior: 'smooth'
-    });
-}
-
-</script>
 
 </body>
 </html>
