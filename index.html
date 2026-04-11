@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claire’s Classy Cakes</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,9 +18,14 @@
 
 /* BODY */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #fff;
+    font-family: 'Inter', sans-serif;
     color: #111;
+    background: #fff;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
 }
 
 /* HEADER */
@@ -28,86 +33,83 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 60px;
-    background: black;
-    color: white;
-}
-
-.logo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 28px;
+    padding: 30px 80px;
+    background: #000;
+    color: #fff;
 }
 
 nav a {
-    color: white;
-    margin-left: 25px;
+    color: #fff;
     text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
 }
 
 /* HERO */
 .hero {
-    position: relative;
-    padding: 120px 60px;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 80px;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 500px;
-    height: 500px;
-    background: #f8d7e3;
-    border-radius: 50%;
-    z-index: -1;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 50px;
+.hero-text {
     max-width: 500px;
 }
 
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.2;
+}
+
 .hero span {
-    color: #ff4fa3;
+    color: #e91e63;
 }
 
 .hero p {
     margin: 20px 0;
+    color: #555;
 }
 
 .hero img {
-    position: absolute;
-    right: 80px;
-    top: 100px;
-    width: 300px;
-    border-radius: 15px;
+    width: 340px;
+    border-radius: 12px;
 }
 
 /* BUTTON */
 button {
-    background: #ff4fa3;
+    background: #e91e63;
     border: none;
-    padding: 12px 24px;
+    padding: 14px 28px;
     color: white;
-    border-radius: 30px;
+    border-radius: 50px;
     cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c2185b;
 }
 
 /* PRODUCTS */
 .products {
-    padding: 100px 60px;
+    padding: 100px 80px;
 }
 
 .products h2 {
-    font-family: 'Playfair Display', serif;
     margin-bottom: 40px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -121,32 +123,25 @@ button {
 
 .card img {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
 }
 
 .card h3 {
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 16px;
 }
 
 /* CUSTOM CAKES */
 .custom {
-    position: relative;
-    padding: 100px 60px;
-    background: black;
+    background: #000;
     color: white;
+    padding: 100px 80px;
     text-align: center;
 }
 
-.custom::before {
-    content: "";
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 400px;
-    height: 400px;
-    background: #ff4fa3;
-    border-radius: 50%;
-    opacity: 0.2;
+.custom p {
+    color: #ccc;
+    margin: 10px 0;
 }
 
 /* CONTACT */
@@ -155,10 +150,17 @@ button {
     text-align: center;
 }
 
+.contact a {
+    color: #e91e63;
+    text-decoration: none;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
+    font-size: 14px;
+    color: #777;
 }
 
 </style>
@@ -167,7 +169,7 @@ footer {
 <body>
 
 <header>
-    <div class="logo">Claire’s Classy Cakes</div>
+    <h2>Claire’s Classy Cakes</h2>
     <nav>
         <a href="#">Home</a>
         <a href="#">Products</a>
@@ -177,18 +179,20 @@ footer {
 </header>
 
 <section class="hero">
-    <h1>Delicious Treats Made With <span>Love</span></h1>
-    <p>Baked fresh for every order</p>
+    <div class="hero-text">
+        <h1>Luxury Cakes & Treats Made With <span>Love</span></h1>
+        <p>Handcrafted bakes designed for every occasion.</p>
 
-    <a href="mailto:clairesclassycakeshop@gmail.com?subject=Order Enquiry">
-        <button>Order Now</button>
-    </a>
+        <a href="mailto:clairesclassycakeshop@gmail.com?subject=Order Enquiry">
+            <button>ORDER NOW</button>
+        </a>
+    </div>
 
     <img src="brownie.jpg">
 </section>
 
 <section class="products">
-    <h2>Our Treats</h2>
+    <h2>Our Collection</h2>
 
     <div class="grid">
         <div class="card">
@@ -203,7 +207,7 @@ footer {
 
         <div class="card">
             <img src="traybake.jpg">
-            <h3>Tray Bake Cakes</h3>
+            <h3>Tray Bakes</h3>
         </div>
 
         <div class="card">
@@ -216,17 +220,17 @@ footer {
 <section class="custom">
     <h2>Custom Cakes</h2>
     <p>Prices from £65</p>
-    <p>*Price varies depending on size and detail</p>
+    <p>Each cake is uniquely designed to match your vision.</p>
 
     <a href="mailto:clairesclassycakeshop@gmail.com?subject=Custom Cake Enquiry">
-        <button>Get a Quote</button>
+        <button>GET A QUOTE</button>
     </a>
 </section>
 
 <section class="contact">
     <h2>Contact</h2>
     <p>
-        <a href="mailto:clairesclassycakeshop@gmail.com">
+        <a href="mailto:clairesclassycakeshop@gmail.com?subject=General Enquiry">
             clairesclassycakeshop@gmail.com
         </a>
     </p>
