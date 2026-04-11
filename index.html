@@ -3,26 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claire’s Classy Cake Shop</title>
+<title>Claire’s Classy Cakes</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
 body {
     font-family: 'Poppins', sans-serif;
     color: #111;
 }
 
-/* HEADINGS */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
@@ -31,7 +28,6 @@ h1, h2, h3 {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 30px 60px;
     background: #000;
     color: #fff;
@@ -41,63 +37,26 @@ nav a {
     color: white;
     text-decoration: none;
     margin-left: 25px;
-    font-size: 14px;
 }
 
 /* HERO */
 .hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
     padding: 100px 60px;
     background: #f8d7e3;
-}
-
-.hero-text {
-    max-width: 500px;
+    text-align: center;
 }
 
 .hero h2 {
     font-size: 42px;
-    margin-bottom: 10px;
 }
 
 .hero span {
     color: #ff4fa3;
 }
 
-.hero p {
-    margin-bottom: 20px;
-}
-
-.hero img {
-    width: 320px;
-    border-radius: 12px;
-}
-
-/* BUTTON */
-button {
-    background: #ff4fa3;
-    border: none;
-    padding: 12px 24px;
-    color: white;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #e04391;
-}
-
 /* PRODUCTS */
 .products {
     padding: 80px 60px;
-}
-
-.products h2 {
-    margin-bottom: 30px;
 }
 
 .grid {
@@ -107,6 +66,7 @@ button:hover {
 }
 
 .card {
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -119,46 +79,38 @@ button:hover {
     border-radius: 12px;
 }
 
-.card h3 {
-    margin-top: 10px;
+/* PRODUCT SECTIONS (hidden by default) */
+.product-section {
+    display: none;
+    padding: 60px;
 }
 
-/* CUSTOM CAKES */
+.product-section.active {
+    display: block;
+}
+
+/* CUSTOM */
 .custom {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
     padding: 80px 60px;
     background: #000;
     color: white;
-}
-
-.custom-text {
-    max-width: 400px;
-}
-
-.custom img {
-    width: 320px;
-    border-radius: 12px;
-}
-
-/* CONTACT */
-.contact {
-    padding: 60px;
     text-align: center;
 }
 
-.contact a {
-    color: #ff4fa3;
-    text-decoration: none;
+/* BUTTON */
+button {
+    background: #ff4fa3;
+    border: none;
+    padding: 12px 24px;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
-    font-size: 14px;
 }
 
 </style>
@@ -170,70 +122,100 @@ footer {
     <h1>Claire’s Classy Cakes</h1>
     <nav>
         <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Custom Cakes</a>
-        <a href="#">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <div class="hero-text">
-        <h2>Delicious Treats Made With <span>Love</span></h2>
-        <p>Baked fresh for every order</p>
-        <button>Order Now</button>
-    </div>
-    <img src="brownie.jpg" alt="Brownies">
+    <h2>Delicious Treats Made With <span>Love</span></h2>
 </section>
 
 <section class="products">
     <h2>Our Treats</h2>
 
     <div class="grid">
-        <div class="card">
-            <img src="cookiepie.jpg" alt="">
+
+        <div class="card" onclick="openSection('cookiepies')">
+            <img src="cookiepie.jpg">
             <h3>Cookie Pies</h3>
         </div>
 
-        <div class="card">
-            <img src="brownie.jpg" alt="">
+        <div class="card" onclick="openSection('brownies')">
+            <img src="brownie.jpg">
             <h3>Brownies</h3>
         </div>
 
-        <div class="card">
-            <img src="traybake.jpg" alt="">
+        <div class="card" onclick="openSection('traybakes')">
+            <img src="traybake.jpg">
             <h3>Tray Bake Cakes</h3>
         </div>
 
-        <div class="card">
-            <img src="cookie.jpg" alt="">
+        <div class="card" onclick="openSection('cookies')">
+            <img src="cookie.jpg">
             <h3>Cookies</h3>
         </div>
+
     </div>
+</section>
+
+<!-- PRODUCT DETAIL SECTIONS -->
+
+<section id="cookiepies" class="product-section">
+    <h2>Cookie Pies</h2>
+    <p>Our signature stuffed cookie pies.</p>
+</section>
+
+<section id="brownies" class="product-section">
+    <h2>Brownies</h2>
+    <p>Rich, fudgy brownies in multiple flavours.</p>
+</section>
+
+<section id="traybakes" class="product-section">
+    <h2>Tray Bake Cakes</h2>
+    <p>Perfect for sharing and events.</p>
+</section>
+
+<section id="cookies" class="product-section">
+    <h2>Cookies</h2>
+    <p>Freshly baked cookies with premium ingredients.</p>
 </section>
 
 <section class="custom">
-    <div class="custom-text">
-        <h2>Custom Cakes</h2>
-        <p>Prices from £65</p>
-        <p>*Price varies depending on size and detail of the cake</p>
+    <h2>Custom Cakes</h2>
+    <p>Prices from £65</p>
+    <p>*Price varies depending on size and detail</p>
 
-        <a href="mailto:info@yourbakery.com">
-            <button>Get a Quote</button>
-        </a>
-    </div>
-
-    <img src="cookiepie.jpg" alt="Custom Cake">
-</section>
-
-<section class="contact">
-    <h2>Contact Us</h2>
-    <p>Email us for orders and enquiries</p>
-    <p><a href="mailto:info@yourbakery.com">info@yourbakery.com</a></p>
+    <a href="mailto:clairesclassycakeshop@gmail.com?subject=Custom Cake Enquiry">
+        <button>Get a Quote</button>
+    </a>
 </section>
 
 <footer>
-    <p>© 2026 Claire’s Classy Cakes</p>
+    <p>
+        Contact:
+        <a href="mailto:clairesclassycakeshop@gmail.com?subject=Enquiry">
+            clairesclassycakeshop@gmail.com
+        </a>
+    </p>
 </footer>
+
+<script>
+
+function openSection(sectionId) {
+    const sections = document.querySelectorAll('.product-section');
+
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    document.getElementById(sectionId).classList.add('active');
+
+    window.scrollTo({
+        top: document.getElementById(sectionId).offsetTop,
+        behavior: 'smooth'
+    });
+}
+
+</script>
 
 </body>
 </html>
