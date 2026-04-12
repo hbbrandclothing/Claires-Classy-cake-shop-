@@ -203,11 +203,15 @@
       position: relative;
     }
 
-    .hero-image img {
-      border-radius: 36px;
-      height: 700px;
-      box-shadow: var(--shadow);
-    }
+.hero-image img {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 36px;
+    box-shadow: var(--shadow);
+    margin-left: auto;
+}
 
     .floating-card {
       position: absolute;
