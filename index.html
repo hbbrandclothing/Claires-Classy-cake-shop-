@@ -1414,6 +1414,28 @@ function goToPayment() {
 </body>
 </html>
 
+
+
+<script>
+let basket = JSON.parse(localStorage.getItem("basket")) || [];
+
+function addToBasket(name, price) {
+  basket.push({ name, price });
+
+  localStorage.setItem("basket", JSON.stringify(basket));
+
+  updateBasketCount();
+
+  alert(name + " added to basket 🛒");
+}
+
+function updateBasketCount() {
+  document.getElementById("basket-count").innerText = basket.length;
+}
+
+updateBasketCount();
+</script>
+
   
 
 </body>
