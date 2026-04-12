@@ -833,6 +833,35 @@ function orderProduct(productName) {
   </div>
 </div>
 
+  <script>
+let selectedProductLink = "";
+
+function openOrderModal(paymentLink) {
+  selectedProductLink = paymentLink;
+  document.getElementById("orderModal").classList.add("active");
+}
+
+function closeOrderModal() {
+  document.getElementById("orderModal").classList.remove("active");
+}
+
+function goToPayment() {
+  const name = document.getElementById("orderName").value;
+  const address = document.getElementById("orderAddress").value;
+  const postcode = document.getElementById("orderPostcode").value;
+
+  if (!name || !address || !postcode) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  window.location.href = selectedProductLink;
+}
+</script>
+
+</body>
+</html>
+
   
 
 </body>
