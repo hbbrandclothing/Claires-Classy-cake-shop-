@@ -70,135 +70,47 @@
 </section>
 
 <style>
-.cookie-section {
-  text-align: center;
-  padding: 80px 20px;
-  background: #ffffff; /* fixed to match top */
-}
 
-.cookie-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #777;
-  margin-bottom: 50px;
-}
-
-.products {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
-}
-
-.product-card {
-  background: #fff;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-}
-
-.img-wrap {
-  height: 200px;
-  overflow: hidden;
-}
-
-.img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.product-info {
-  padding: 18px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.product-info h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  margin-bottom: 6px;
-}
-
-.product-info p {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 14px;
-}
-
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-}
-
-button {
-  background: #111;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-button:hover {
-  background: #333;
-}
-  
-  
-</style>
-
-<style>
+  <style>
 @media (max-width: 768px) {
 
-  section.cookie-section .products {
-    grid-template-columns: 1fr !important;
-    max-width: 420px !important;
-    margin: 0 auto !important;
+  /* FORCE SINGLE COLUMN */
+  .products {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     gap: 20px !important;
   }
 
-  section.cookie-section .product-card {
-    width: 100% !important;
+  /* CENTER EACH CARD */
+  .product-card {
+    width: 90% !important;
+    max-width: 400px !important;
     margin: 0 auto !important;
-    border-radius: 20px !important;
   }
 
-  section.cookie-section .product-info {
+  /* FIX IMAGE SIZE */
+  .img-wrap {
+    height: 220px !important;
+  }
+
+  /* CENTER TEXT */
+  .product-info {
     text-align: center !important;
     padding: 20px !important;
   }
 
-  section.cookie-section .bottom {
+  /* STACK PRICE + BUTTON */
+  .bottom {
     flex-direction: column !important;
-    align-items: center !important;
     gap: 10px !important;
+    align-items: center !important;
   }
 
-  section.cookie-section button {
+  /* NICE BIG BUTTON */
+  .bottom button {
     width: 100% !important;
     padding: 12px !important;
-  }
-
-  section.cookie-section .img-wrap {
-    height: 220px !important;
   }
 
 }
