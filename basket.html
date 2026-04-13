@@ -10,21 +10,36 @@
 <div id="items"></div>
 <h2 id="total"></h2>
 
+<script src="cart.js"></script>
+
 <script>
-// Get saved basket
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = getCart();
 
 let total = 0;
 let output = "";
 
-// Loop through items
-cart.forEach(item => {
-  total += item.price;
+// If basket empty
+if (cart.length === 0) {
+  output = "<p>Your basket is empty</p>";
+}
 
-  output += `<p>${item.name} - £${item.price}</p>`;
+// Show items
+cart.forEach(item => {
+  let itemTotal = item.price * item.quantity;
+  total += itemTotal;
+
+  output += `
+    <div>
+      <p><strong>${item.name}</strong></p>
+      <p>£${item.price} x ${item.quantity}</p>
+      <p>Item total: £${itemTotal}</p>
+      <button onclick="removeFromCart('${item.name}')">Remove</button>
+      <hr>
+    </div>
+  `;
 });
 
-// Show on page
+// Display
 document.getElementById("items").innerHTML = output;
 document.getElementById("total").innerText = "Total: £" + total;
 
